@@ -2,6 +2,8 @@
     <head>
         <title>Transfer Files</title>
         <meta charset="UTF-8">
+        <meta name="description" content="Transfer Files">
+        <meta name="keywords" content="Transfer,Files,Share,Send,Data">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="327027742179-87vgf59pkf6reudfg4v9eorkoe7gkr7a.apps.googleusercontent.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -9,14 +11,72 @@
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <link rel="stylesheet" href="style.css">
 <script src="jquery-3.4.1.min.js"></script>
+<style>
+  .main{
+  align-items: center;
+  box-sizing: content-box;
+  position: sticky;
+    top: 100px;
+    left: 80px;
+    width: 300px;
+
+}
+@media only screen and (max-width: 600px) {
+  body {
+  height: 100%;
+  width: auto;
+  overflow: scroll;
+  }
+  .open-button{
+    display: none;
+  }
+}
+.box1{
+  padding:10px 10px 30px;
+  text-align: center;
+  height: 300px;
+  background-color:#f8f8f8;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+
+  box-sizing: content-box;
+  position: sticky;
+}
+.box2{
+  padding:10px 10px 30px;
+  text-align: center;
+  height: 120px;
+  background-color:#f8f8f8;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+  box-sizing: content-box;
+  position: sticky;
+}
+.box1-inner{
+  padding:30px 50px;
+  margin: 15px;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  background-color: #f8f8f8;
+  box-shadow: 5px 12px #f1f1f1;
+  display: none;
+}
+.box1-inner1{
+  background-color: #000;
+  width: 200px;
+  height: 250px;
+  overflow: auto;
+}
+
+</style>
     </head>
+
     <body>
 <nav class="nav">
   <a href="index.html" class="nav-item is-active" active-color="orange">Home</a>
-  <a href="profile.html" class="nav-item" active-color="green">About</a>
+  <a href="about.html" class="nav-item" active-color="green">About us</a>
   <a href="plan.html" class="nav-item" active-color="red">Files plus</a>
-  <a href="contact.html" class="nav-item" active-color="rebeccapurple">Contact us</a>
-  <a href="login.html" class="nav-item" active-color="blue">Sign in</a>
+  <a href="support.html" class="nav-item" active-color="rebeccapurple">Product</a>
+  <a href="login.html" class="nav-item" active-color="blue">Sign in</a> 
   <span class="nav-indicator"></span>
 </nav>
 
@@ -25,8 +85,9 @@
   <h3 style="text-align: left; padding-left: 20px;">Send</h3>
   <form action="upload.php" method="POST" id="myform" target="_self">
     <label class="myFile">
-  <img src="plus.png" style="width: 100px; height: 100px;padding:30px 80px;">
-      <input type="file" id="files" hidden multiple meathod="post"/>
+  <img src="plus.png"  id="plus" style="width: 100px; height: 100px;padding:30px 80px; display: block;" onclick="change()">
+      <input type="file" id="files" hidden multiple meathod="post"/><br>
+      <input type="button" value="Send" class="btn" id="plusbt" style="display: none;">
    </label>
   </form>
 </div>
@@ -189,6 +250,9 @@
       <button type="submit" class="btn " onclick="sub()">Submit</button><button type="button" class="btn cancel" onclick="closeForm()">Close</button>
     </form>
   </div>
+
+
+
 </body>
     <script>
 function openForm() {
@@ -251,6 +315,13 @@ items.forEach((item, index) => {
   item.classList.contains('is-active') && handleIndicator(item);
 });
 
+//change
+function change(){
+var x=document.getElementById("plus");
+var y=document.getElementById("plusbt");
+x.style.display="none";
+y.style.display="block";
+}
         </script>
        
 </html>
