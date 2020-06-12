@@ -1,0 +1,383 @@
+<html>
+    <head>
+        <title>Transfer Files</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Transfer Files">
+        <meta name="keywords" content="Transfer,Files,Share,Send,Data">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+  .main{
+  align-items: center;
+  box-sizing: content-box;
+  position: sticky;
+    top: 100px;
+    left: 80px;
+    width: 300px;
+
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  }
+  .main{
+    left:39px;
+    top: 88px;
+  }
+  .open-button{
+    display: none;
+  }
+  .nav{
+    display: none;
+  }
+  .topnav{
+  overflow: hidden;
+  background-color: #333;
+  width: auto;
+  display: block;
+}
+.topnav #myLinks{
+  display: none;
+}
+.topnav a{
+  color: #f1f1f1;
+  padding: 14px 16px;
+  font-size: 17px;
+  display: block;
+  text-decoration: none;
+}
+.topnav a:hover{
+  background-color: chocolate;
+}
+.topnav a.icon{
+  background-color:black;
+  display: block;
+  position: absolute;
+  height: 15px;
+  right: 54px;
+  top:40px;
+}
+}
+.box1{
+  padding:10px 10px 30px;
+  text-align: center;
+  height: 300px;
+  background-color:#f8f8f8;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+  box-sizing: content-box;
+  position: sticky;
+}
+.box2{
+  padding:10px 10px 30px;
+  text-align: center;
+  height: 120px;
+  background-color:#f8f8f8;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+  box-sizing: content-box;
+  position: sticky;
+}
+.box1-inner{
+  padding:30px 50px;
+  margin: 15px;
+  text-align: center;
+  width: 200px;
+  height: 300px;
+  background-color: #f8f8f8;
+  box-shadow: 5px 12px #f1f1f1;
+  display: none;
+}
+.box1-inner1{
+  background-color: #000;
+  width: 200px;
+  height: 250px;
+  overflow: auto;
+}
+.hide {
+  display:none;
+}
+
+</style>
+    </head>
+
+    <body>
+<nav class="nav">
+  <a href="index.html" class="nav-item is-active" active-color="orange">Home</a>
+  <a href="about.html" class="nav-item" active-color="green">About us</a>
+  <a href="plan.html" class="nav-item" active-color="red">Files plus</a>
+  <a href="support.html" class="nav-item" active-color="rebeccapurple">Product</a>
+  <a href="login.html" class="nav-item" active-color="blue">Sign in</a> 
+  <span class="nav-indicator"></span>
+ 
+</nav>
+<div class="topnav">
+  <div id="myLinks">
+  <a href="index.html" class="hide" >Home</a>
+  <a href="about.html" class="hide">About us</a>
+  <a href="plan.html" class="hide">Files plus</a>
+  <a href="support.html" class="hide" >Product</a>
+  <a href="login.html" class="hide">Sign in</a> 
+</div>
+  <a href="javascript:void(0);" class="icon" onclick="navopen()"><i class="fa fa-bars"></i></a>
+  
+</div>
+
+<div class="main">
+<div class="box1">
+  <h3 style="text-align: left; padding-left: 20px;">Send</h3>
+  <form action="upload.php" method="POST" id="myform" target="_self">
+    <label class="myFile">
+  <img src="plus.png"  id="plus" style="width: 100px; height: 100px;padding:30px 80px; display: block;" onclick="change()">
+      <input type="file" id="files" hidden multiple meathod="post"/><br>
+      <input type="button" value="Send" class="btn" id="plusbt" style="display: none;">
+   </label>
+  </form>
+</div>
+<div class="box1-inner">
+<div class="box1-inner1">
+  <div id="selectedFiles"></div>
+</div><br>
+<input type="button" value="Send" class="btn">
+
+
+</div>
+<br><br>
+<div class="box2">
+    <h3 style="text-align: left; padding-left: 20px;">Receive</h3><br>
+    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <form action="receive.php" target="_self">
+      <input type="text" placeholder="Input Key" name="search">
+      <button type="submit" class="icon"><i class="fa fa-arrow-down"></i></button>
+    </form>
+  </div>
+  </div>
+
+  <div class="container">
+    <div class="sombra">
+      <div class="shave">
+        <div class="led top-led"></div>
+        <div class="led bottom-led"></div>
+        <div class="shave-decal"></div>
+      </div>
+      <div class="hair-back"></div>
+      <div class="hair-mid"></div>
+      <div class="curl"></div>
+      <div class="hair">
+        <div class="shine"></div>
+      </div>
+      <div class="head">
+        <div class="forehead"></div>
+        <div class="mid-layer"></div>
+        <div class="upper-lip"></div>
+        <div class="lower-lip"></div>
+        <div class="chin-roof"></div>
+        <div class="chin"></div>
+        <div class="ear"></div>
+
+        <div class="face">
+          <div class="brows">
+            <div class="left-brow"></div>
+            <div class="right-brow"></div>
+          </div>
+          <div class="eyes">
+            <!-- <div class="lashes"></div> -->
+          </div>
+          <div class="smile"></div>
+        </div>
+      </div>
+      <div class="legs">
+        <div class="leg">
+          <div class="leg-decal"></div>
+          <div class="foot left-foot"></div>
+        </div>
+        <div class="leg right-leg">
+          <div class="leg-decal"></div>
+
+          <div class="foot right-foot"></div>
+        </div>
+      </div>
+      <div class="sombra-body">
+        <div class="dress">
+          <div class="pleat"></div>
+          <div class="pleat right"></div>
+        </div>
+        <div class="jacket-left">
+          <div class="belt">
+            <div class="translocator"></div>
+            <div class="translocator"></div>
+            <div class="translocator"></div>
+          </div>
+        </div>
+        <div class="arms">
+          <div class="arm-left">
+            <div class="hand">
+              <div class="thumb"></div>
+              <div class="fingers">
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+              </div>
+            </div>
+          </div>
+          <div class="arm-right">
+            <div class="fore-arm"></div>
+            <div class="hand">
+              <div class="thumb"></div>
+              <div class="fingers">
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jacket">
+          <div class="silver-accent"></div>
+        </div>
+        <div class="collar">
+          <div class="lining"></div>
+          <div class="neck"></div>
+          <div class="jacket-opening"></div>
+          <div class="jacket-zip"></div>
+          <div class="jacket-collar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="screen main-screen">
+      <p id="code"></p>
+    </div>
+    <div class="screen sub-screen">
+      <div id="skull">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/6104a559ac558db8f7356a10b419d1330e98758ba9f8099666d694c088c64265.png" />
+      </div>
+    </div>
+    <div class="screen loading-screen">
+      <div class="hex-border">
+        <div class="hexagons">
+          <div class="hexagon"></div>
+          <div class="hexagon"></div>
+          <div class="hexagon"></div>
+          <div class="hexagon"></div>
+          <div class="hexagon"></div>
+          <div class="hexagon"></div>
+          <div class="hexagon"></div>
+        </div>
+      </div>
+    </div>
+    <div class="screen keurig">
+      <div class="wrapper">
+        <p>Hacking Amelie's Keurig...</p>
+        <div class="meter">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!--form           //////////////////             help-->
+  <button class="open-button" onclick="openForm()"><i class="fa fa-question-circle"></i>  Help Desk</button>
+  <div class="form-popup" id="myForm">
+    <form action="contact.php" class="form-container">
+      <h2>Contact us</h2>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <label for="email"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" required>
+      <label for="msg"><b>Name</b></label>
+      <textarea placeholder="Enter Message" name="msg" class="textbox" required></textarea>
+  
+      <button type="submit" class="btn " onclick="sub()">Submit</button><button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+
+
+</body>
+    <script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+function sub(){
+  window.alert("successfully submited.")
+}
+
+ //files dispaly
+	var selDiv = "";
+		
+	document.addEventListener("DOMContentLoaded", init, false);
+	
+	function init() {
+		document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+		selDiv = document.querySelector("#selectedFiles");
+	}
+		
+	function handleFileSelect(e) {
+		
+		if(!e.target.files) return;
+		
+		selDiv.innerHTML = "";
+		
+		var files = e.target.files;
+		for(var i=0; i<files.length; i++) {
+			var f = files[i];
+			
+			selDiv.innerHTML += f.name + "<br/>";
+
+		}
+		
+	}
+//naviation
+  const indicator = document.querySelector('.nav-indicator');
+const items = document.querySelectorAll('.nav-item');
+
+function handleIndicator(el) {
+  items.forEach(item => {
+    item.classList.remove('is-active');
+    item.removeAttribute('style');
+  });
+
+  indicator.style.width = `${el.offsetWidth}px`;
+  indicator.style.left = `${el.offsetLeft}px`;
+  indicator.style.backgroundColor = el.getAttribute('active-color');
+
+  el.classList.add('is-active');
+  el.style.color = el.getAttribute('active-color');
+}
+
+
+items.forEach((item, index) => {
+  item.addEventListener('click', e => {handleIndicator(e.target);});
+  item.classList.contains('is-active') && handleIndicator(item);
+});
+
+//change
+function change(){
+var x=document.getElementById("plus");
+var y=document.getElementById("plusbt");
+x.style.display="none";
+y.style.display="block";
+}
+//moblie menu
+function navopen(){
+  var c=document.getElementById("myLinks");
+  if(c.style.display==="block"){
+    c.style.display="none";
+  }
+  else{
+    c.style.display="block";
+  }
+}
+        </script>
+       
+</html>
